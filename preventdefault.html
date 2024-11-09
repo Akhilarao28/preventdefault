@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration form</h1>
+    <form>
+    <input type="text" name="name" id="name">
+    <input type="email" name="email" id="email">
+    <input type="password" name="password" id="password">
+    <input type="number" name="number" id="number">
+    <input type="text" name="city" id="city">
+    <button>Register</button>
+    </form>
+    <script>
+        let reg_ele=document.getElementsByTagName("h1")[0]
+        console.log(reg_ele)
+        let name_ele=document.getElementById("name") 
+        let email_ele=document.getElementById("email")
+        let pass_ele=document.getElementById("password")
+        let number_ele=document.getElementById("number")
+        let city_ele=document.getElementById("city")
+        let btn_ele=document.getElementsByTagName("button")[0]
+
+
+        btn_ele.addEventListener("click",(e)=>{
+            e.preventDefault()
+            let obj={}
+            obj.name=name_ele.value;
+            obj.email=email_ele.value;
+            obj.password=pass_ele.value;
+            obj.number=number_ele.value;
+            obj.city=city_ele.value;
+            console.log(obj)
+            name_ele.value=""
+            email_ele.value=""
+            pass_ele.value=""
+            number_ele.value=""
+            city_ele.value=""
+            for(i in obj){
+                let ele=document.createElement("p")
+                document.body.appendChild(ele)
+                ele.innerText=`the value of ${i} is:${obj[i]}`
+            }
+        })
+            </script>
+    
+</body>
+</html>

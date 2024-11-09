@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="super_grand">super grand
+    <div id="grandparent"> grandparent
+        <div id="parent">parent
+            <div id="child">child</div>
+        </div>
+    </div>
+</div>
+    <script>
+        let super_grand_ele=document.getElementById("super_grand");
+
+        super_grand_ele.addEventListener("click",(e)=>{
+            e.stopPropagation()
+            console.log("hello0")
+        });
+        let grand_ele=document.getElementById("grandparent");
+        grand_ele.addEventListener("click",(e)=>{
+            e.stopPropagation()
+            console.log("hello1")
+        });
+        let parent=document.getElementById("parent");
+        parent.addEventListener("click",(e)=>{
+            e.stopPropagation()
+            console.log("hello2")
+        });
+        let child_ele=document.getElementById("child");
+        child.addEventListener("click",(e)=>{
+            e.stopPropagation()
+            console.log("hello3")
+        });
+        function sum(a,b){
+            b=b??30
+            c=a+b
+            return c
+        }
+        console.log(sum(50))
+    </script>
+</body>
+</html>
